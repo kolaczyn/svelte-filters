@@ -1,7 +1,7 @@
 <script lang="ts">
   import axios from "axios";
-  import { PRODUCT_API_URL } from "../const";
-  import type { ProductListDto } from "src/types";
+  import { PRODUCT_API_URL } from "./const";
+  import type { ProductListDto } from "./types";
   import ProductPane from "./ProductPane.svelte";
 
   const fetchProducts = async () =>

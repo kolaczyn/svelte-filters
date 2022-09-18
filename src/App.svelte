@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Footer from "./lib/Footer.svelte";
-  import Navbar from "./lib/Navbar.svelte";
-  import ProductList from "./lib/ProductList.svelte";
-  import Wrapper from "./lib/Wrapper.svelte";
+  import Footer from "./lib/layout/Footer.svelte";
+  import Navbar from "./lib/layout/Navbar.svelte";
+  import Wrapper from "./lib/layout/Wrapper.svelte";
+  import ProductList from "./lib/products/ProductList.svelte";
 </script>
 
 <Navbar />
