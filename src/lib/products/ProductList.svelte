@@ -11,7 +11,7 @@
 
 {#await fetchProducts() then products}
   <div class="md:grid-cols-3 grid-cols-2 gap-8 grid">
-    {#each products as product}
+    {#each products as product (product.id)}
       <ProductPane
         label={`${product.brand} ${product.name}`}
         imageUrl={product.pictures[0].medium}
