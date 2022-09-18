@@ -17,6 +17,6 @@
 
 {#await productsPromise then products}
   {#each products as product}
-    <p>{product.id}. {product.name}</p>
+    <p class="font-bold">{product.id}. {product.name}</p>
   {/each}
 {/await}
