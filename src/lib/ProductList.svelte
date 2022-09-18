@@ -1,22 +1,20 @@
 <script lang="ts">
   import axios from "axios";
+  import { PRODUCT_API_URL } from "../const";
   import type { ProductListDto } from "src/types";
-  type Product = {
-    name: string;
-    id: number;
-  };
-  const fetchProducts = async () =>
-    (
-      await axios.get<ProductListDto>(
-        "https://www.rossmann.pl/products/v2/api/Products"
-      )
-    ).data.data.products;
+  import ProductPane from "./ProductPane.svelte";
 
-  const productsPromise = fetchProducts();
+  const fetchProducts = async () =>
+    (await axios.get<ProductListDto>(PRODUCT_API_URL)).data.data.products;
 </script>
 
-{#await productsPromise then products}
+{#await fetchProducts() then products}
   {#each products as product}
-    <p class="font-bold">{product.id}. {product.name}</p>
+    <ProductPane
+      label={`${product.brand} ${product.name}`}
+      imageUrl={product.pictures[0].medium}
+      caption={product.caption}
+      price={product.price}
+    />
   {/each}
 {/await}
